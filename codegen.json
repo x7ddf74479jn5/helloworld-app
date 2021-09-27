@@ -1,0 +1,24 @@
+{
+  "generates": {
+    "./src/graphql/generated/resolvers-types.ts": {
+      "schema": "./src/graphql/typeDefs.graphql",
+      "config": {
+        "mapperTypeSuffix": "Ts",
+        "mappers": {
+          "Status": "../resolvers#Status",
+          "Author": "../resolvers#Author"
+        }
+      },
+      "plugins": ["typescript", "typescript-resolvers"]
+    },
+    "./src/graphql/generated/query-types.ts": {
+      "schema": "http://localhost:3000/api/graphql",
+      "documents": "./src/graphql/query/*.graphql",
+      "plugins": [
+        "typescript",
+        "typescript-operations",
+        "typescript-react-apollo"
+      ]
+    }
+  }
+}

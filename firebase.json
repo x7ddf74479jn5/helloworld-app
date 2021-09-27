@@ -13,7 +13,8 @@
     "source": ".",
     "predeploy": [
       "npm --prefix \"$PROJECT_DIR\" install",
-      "npm --prefix \"$PROJECT_DIR\" run build"
+      "npm --prefix \"$PROJECT_DIR\" run build",
+      "npx tsc --skipLibCheck firebaseFunctions.ts"
     ],
     "runtime": "nodejs14"
   }
